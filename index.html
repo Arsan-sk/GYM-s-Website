@@ -1148,22 +1148,6 @@ button { font-family: inherit; }
 }
 .sticky-cta__item--accent { color: var(--accent-warm); }
 
-/* Pulse dot on WhatsApp (added by JS after 6s) */
-.pulse-dot {
-  width: 8px; height: 8px;
-  border-radius: 999px;
-  background: #25d366;
-  position: absolute;
-  top: 10px; right: calc(50% - 18px);
-  box-shadow: 0 0 0 0 rgba(37,211,102,0.4);
-  animation: pulse 2s ease-out infinite;
-}
-@keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
-  60%  { box-shadow: 0 0 0 8px rgba(37,211,102,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-}
-
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .programs__grid { grid-template-columns: repeat(2, 1fr); }
@@ -1863,18 +1847,6 @@ button { font-family: inherit; }
       card.style.transform = '';
     });
   });
-})();
-
-// ─── 8. FLOATING WHATSAPP PULSE ──────────────────────────────────────────────
-(function () {
-  // Add a pulsing dot to the WhatsApp sticky button after 6s
-  setTimeout(() => {
-    const wa = document.querySelector('.sticky-cta__item--accent');
-    if (!wa) return;
-    const dot = document.createElement('span');
-    dot.className = 'pulse-dot';
-    wa.appendChild(dot);
-  }, 6000);
 })();
 </script>
 </body></html>
